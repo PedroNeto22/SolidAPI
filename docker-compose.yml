@@ -1,0 +1,15 @@
+version: '3.3'
+
+
+services:
+  database:
+    image: mysql:latest
+    container_name: apiweb1database
+    environment:
+      MYSQL_DATABASE: 'todolist'   
+      MYSQL_PASSWORD: 'afafet45'      
+      MYSQL_ROOT_PASSWORD: 'afafet45'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
