@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import userModel from '../models/User';
+import userModel from '../entities/User';
 
 class UserController {
   async save(req: Request, res: Response) {
