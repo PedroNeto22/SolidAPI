@@ -5,8 +5,7 @@
       "ES6",
       "DOM"
     ],
-    "module": "ES2020",
-    "moduleResolution": "Bundler",
+    "module": "CommonJS",
     "typeRoots": [
       "./node_modules/@types",
       "./src/@types"
