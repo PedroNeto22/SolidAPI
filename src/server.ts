@@ -1,3 +1,7 @@
-const a: string = 'aaaaaaaaaaaaaa';
+import app from './app';
 
-console.log(a);
+const PORT = 3333;
+
+app.listen(PORT, () => {
+  console.log('Server is running!');
+});
