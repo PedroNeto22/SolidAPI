@@ -23,7 +23,6 @@ export default class CreateUserController {
       return res.status(200).send();
     } catch (error) {
       const err = error as Error;
-      console.log(err.stack);
 
       return res.status(400).json({
         message: err.message || 'Unexpected error.',

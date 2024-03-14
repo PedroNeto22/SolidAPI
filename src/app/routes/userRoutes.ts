@@ -3,6 +3,8 @@ import { createUserController } from '../index';
 
 const routes = Router();
 
-routes.post('/', createUserController.handle);
+routes.post('/',(req,res) => {
+  return createUserController.handle(req,res)
+} );
 
 export default routes;
