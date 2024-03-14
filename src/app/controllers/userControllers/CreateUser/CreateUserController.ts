@@ -9,7 +9,7 @@ export default class CreateUserController {
 
     if (!email || !firstName || !lastName || !password) {
       return res.status(400).json({
-        msg: 'All fields required',
+        message: 'All fields required',
       });
     }
 
