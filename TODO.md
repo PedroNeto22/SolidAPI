@@ -22,3 +22,4 @@
  [  ] Atualizar um tarefa (título, corpo, data de vencimento, prioridade, status)
  [  ] O usuário deve poder excluir um tarefa que pertença a ele, e não poderá excluir uma tarefa que não pertença a ele
  [  ] Validar os dados com o zod
+ [  ] rever a logica do user id ser uma string e depois ser um number em algumas partes do código
