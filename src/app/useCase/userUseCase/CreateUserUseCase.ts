@@ -24,6 +24,6 @@ export default class CreateUserUseCase implements ICreateUserUseCase {
       params.password,
     );
 
-    this.createUserRepository.save(user);
+    await this.createUserRepository.save(user);
   }
 }
