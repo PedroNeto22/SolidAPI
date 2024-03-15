@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { IGetUserByIdRepository } from './IGetUserByIdRepository';
-import User from '../../entities/User';
+import User from '../../../entities/User';
 
 const prisma = new PrismaClient();
 

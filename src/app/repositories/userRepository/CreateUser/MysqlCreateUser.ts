@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { ICreateUserRepository } from './ICreateUserRepository';
-import { CreateUserParams } from '../../controllers/userControllers/CreateUser/protocols';
-import User from '../../entities/User';
+import User from '../../../entities/User';
+import { CreateUserParams } from '../../../controllers/userControllers/CreateUser/protocols';
 
 const prisma = new PrismaClient();
 

@@ -3,7 +3,7 @@ import {
   ICreateUserUseCase,
 } from '../../controllers/userControllers/CreateUser/protocols';
 import User from '../../entities/User';
-import { ICreateUserRepository } from '../../repositories/CreateUser/ICreateUserRepository';
+import { ICreateUserRepository } from '../../repositories/userRepository/CreateUser/ICreateUserRepository';
 
 export default class CreateUserUseCase implements ICreateUserUseCase {
   constructor(private readonly createUserRepository: ICreateUserRepository) {}
