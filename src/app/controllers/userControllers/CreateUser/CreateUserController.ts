@@ -20,7 +20,7 @@ export default class CreateUserController {
         lastName,
         password,
       });
-      return res.status(200).send();
+      return res.status(201).send();
     } catch (error) {
       const err = error as Error;
 
