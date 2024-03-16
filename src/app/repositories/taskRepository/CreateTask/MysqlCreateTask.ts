@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 export default class MysqlCreateTaskRepository
   implements ICreateTaskRepository
 {
-  async findByTitle(
+  async findByTitleAndUserId(
     title: string,
     userId: number | null,
   ): Promise<Task | null> {

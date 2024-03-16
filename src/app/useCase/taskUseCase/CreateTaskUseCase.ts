@@ -13,10 +13,11 @@ export default class CreateTaskUseCase implements ICreateTaskUseCase {
   ) {}
 
   async execute(params: CreateTaskParams): Promise<void> {
-    const taskAlreadyExists = await this.createTaskRepository.findByTitle(
-      params.title,
-      params.userId,
-    );
+    const taskAlreadyExists =
+      await this.createTaskRepository.findByTitleAndUserId(
+        params.title,
+        params.userId,
+      );
 
     const userExists = await this.getUserByIdRepository.findById(
       `${params.userId}`,
