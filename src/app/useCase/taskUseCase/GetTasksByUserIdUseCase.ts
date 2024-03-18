@@ -1,6 +1,6 @@
 import {
   IGetTasksByUserIdUseCase,
-  TaskParams,
+  TaskData,
 } from '../../controllers/taskControllers/GetTasksByUserId/protocols';
 import { IGetTaskByUserIdRepository } from '../../repositories/taskRepository/GetUserByUserId/IGetTasksByUserIdRepository';
 import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
@@ -13,15 +13,15 @@ export default class GetTaskByUserIdUseCase
     private readonly getUserByIdRepository: IGetUserByIdRepository,
   ) {}
 
-  async execute(id: string): Promise<TaskParams[] | null> {
-    const userExists = await this.getUserByIdRepository.findById(id);
+  async execute(userId: string): Promise<TaskData[] | null> {
+    const userExists = await this.getUserByIdRepository.findById(userId);
 
     if (!userExists) {
       throw new Error('User does not exists');
     }
 
     const userTasks =
-      await this.getTaskByUserIdRepository.findTasksByUserId(id);
+      await this.getTaskByUserIdRepository.findTasksByUserId(userId);
 
     return userTasks;
   }

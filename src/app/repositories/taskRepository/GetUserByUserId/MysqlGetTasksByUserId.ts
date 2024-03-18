@@ -1,20 +1,16 @@
 import { PrismaClient } from '@prisma/client';
 import { IGetTaskByUserIdRepository } from './IGetTasksByUserIdRepository';
-import { TaskParams } from '../../../controllers/taskControllers/GetTasksByUserId/protocols';
+import { TaskData } from '../../../controllers/taskControllers/GetTasksByUserId/protocols';
 
 const prisma = new PrismaClient();
 
 export default class MysqlGetTasksByUserId
   implements IGetTaskByUserIdRepository
 {
-  async findTasksByUserId(id: string): Promise<TaskParams[] | null> {
-    const userId = Number(id);
+  async findTasksByUserId(userId: string): Promise<TaskData[] | null> {
     const tasks = await prisma.tasks.findMany({
       where: {
         userId,
-      },
-      orderBy: {
-        created_at: 'desc',
       },
       select: {
         id: true,

@@ -7,7 +7,7 @@ routes.post('/', (req, res) => {
   return createTaskController.handle(req, res);
 });
 
-routes.get('/:id', (req, res) => {
+routes.get('/:userId', (req, res) => {
   return getTasksByUserIdController.handle(req, res);
 });
 

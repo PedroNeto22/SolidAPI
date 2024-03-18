@@ -1,5 +1,5 @@
-import { TaskParams } from '../../../controllers/taskControllers/GetTasksByUserId/protocols';
+import { TaskData } from '../../../controllers/taskControllers/GetTasksByUserId/protocols';
 
 export interface IGetTaskByUserIdRepository {
-  findTasksByUserId(id: string): Promise<TaskParams[] | null>;
+  findTasksByUserId(userId: string): Promise<TaskData[] | null>;
 }
