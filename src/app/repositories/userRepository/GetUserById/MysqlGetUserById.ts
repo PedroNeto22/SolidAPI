@@ -7,19 +7,23 @@ const prisma = new PrismaClient();
 export default class MysqlGetUserByIdRepository
   implements IGetUserByIdRepository
 {
-  async findById(userId: string): Promise<Omit<User, 'password'> | null> {
-    const id = Number(userId);
+  async findById(id: string): Promise<Partial<User> | null> {
     const user = await prisma.user.findUnique({
-      select: {
-        firstName: true,
-        lastName: true,
-        email: true,
-      },
       where: {
         id,
       },
     });
 
-    return user;
+    if (user) {
+      const {
+        password,
+        updated_at: updatedAt,
+        created_at: createdAt,
+        ...userData
+      } = user;
+      return userData;
+    }
+
+    return null;
   }
 }

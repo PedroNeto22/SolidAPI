@@ -5,8 +5,8 @@ import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUse
 export default class GetUserByIdUseCase implements IGetUserByIdUseCase {
   constructor(private readonly getUserByIdRepository: IGetUserByIdRepository) {}
 
-  execute(userId: string): Promise<Omit<User, 'password'> | null> {
-    const user = this.getUserByIdRepository.findById(userId);
+  execute(id: string): Promise<Partial<User> | null> {
+    const user = this.getUserByIdRepository.findById(id);
 
     if (!user) {
       throw new Error('the user does not exist');
