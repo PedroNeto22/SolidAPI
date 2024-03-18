@@ -13,19 +13,17 @@ export default class CreateTaskUseCase implements ICreateTaskUseCase {
   ) {}
 
   async execute(params: CreateTaskParams): Promise<void> {
+    const userExists = await this.getUserByIdRepository.findById(params.userId);
+
+    if (!userExists) {
+      throw new Error('User does not exists');
+    }
+
     const taskAlreadyExists =
       await this.createTaskRepository.findByTitleAndUserId(
         params.title,
         params.userId,
       );
-
-    const userExists = await this.getUserByIdRepository.findById(
-      `${params.userId}`,
-    );
-
-    if (!userExists) {
-      throw new Error('User does not exists');
-    }
 
     if (taskAlreadyExists) {
       throw new Error('Task already exists');

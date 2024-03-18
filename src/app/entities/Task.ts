@@ -4,6 +4,6 @@ export default class Task {
     public readonly body: string,
     public readonly status: string,
     public readonly priority: string,
-    public readonly userId: number | null,
+    public readonly userId: string,
   ) {}
 }

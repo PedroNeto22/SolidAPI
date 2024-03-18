@@ -3,7 +3,7 @@ export interface CreateTaskParams {
   body: string;
   status: string;
   priority: string;
-  userId: number | null;
+  userId: string;
 }
 
 export interface ICreateTaskUseCase {

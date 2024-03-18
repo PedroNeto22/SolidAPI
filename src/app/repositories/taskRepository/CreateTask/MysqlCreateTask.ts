@@ -10,14 +10,14 @@ export default class MysqlCreateTaskRepository
 {
   async findByTitleAndUserId(
     title: string,
-    userId: number | null,
+    userId: string,
   ): Promise<Task | null> {
-    const task = await prisma.tasks.findFirst({
+    const task = (await prisma.tasks.findFirst({
       where: {
         title,
         userId,
       },
-    });
+    })) as Task;
 
     return task;
   }

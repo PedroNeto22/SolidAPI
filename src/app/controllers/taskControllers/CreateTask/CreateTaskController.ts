@@ -5,11 +5,7 @@ export default class CreateTaskController {
   constructor(private readonly createTaskUseCase: ICreateTaskUseCase) {}
 
   async handle(req: Request, res: Response) {
-    const { title, body, status, priority } = req.body;
-
-    let { userId } = req.body;
-
-    userId = Number(userId);
+    const { title, body, status, priority, userId } = req.body;
 
     if (!title || !body || !status || !priority || !userId) {
       return res.status(400).json({
