@@ -3,7 +3,7 @@
 ## Criação da conta
  * [ * ] O usuário deve fornecer o nome, email e senha para a criação da conta
  * [ * ] Apos a criação da conta os dados do usuário deveram ser salvos em um banco mysql contendo:
-    - id -> autoincremetado
+    - id -> uuid
     - name -> Nome do usuário
     - email -> email do usuário (identificador único)
     - senha -> Senha do usuário
