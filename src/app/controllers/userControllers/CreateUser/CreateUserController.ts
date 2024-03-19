@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import bcrypt from 'bcryptjs';
 import { ICreateUserUseCase } from './protocols';
 
 export default class CreateUserController {
@@ -14,11 +15,12 @@ export default class CreateUserController {
     }
 
     try {
+      const passwordHash = await bcrypt.hash(password, 10);
       await this.createUserUseCase.execute({
         email,
         firstName,
         lastName,
-        password,
+        password: passwordHash,
       });
       return res.status(201).send();
     } catch (error) {
