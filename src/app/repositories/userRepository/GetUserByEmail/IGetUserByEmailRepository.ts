@@ -1,5 +1,5 @@
 import User from '../../../entities/User';
 
 export interface IGetUserByEmailRepository {
-  findById(email: string): Promise<Partial<User> | null>;
+  findByEmail(email: string): Promise<Partial<User> | null>;
 }

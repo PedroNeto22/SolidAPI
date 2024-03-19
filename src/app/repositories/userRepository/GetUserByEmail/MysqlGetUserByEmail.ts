@@ -4,10 +4,10 @@ import User from '../../../entities/User';
 
 const prisma = new PrismaClient();
 
-export default class MysqlGetUserByIdRepository
+export default class MysqlGetUserByEmailRepository
   implements IGetUserByEmailRepository
 {
-  async findById(email: string): Promise<Partial<User> | null> {
+  async findByEmail(email: string): Promise<Partial<User> | null> {
     const user = await prisma.user.findUnique({
       where: {
         email,
@@ -16,7 +16,6 @@ export default class MysqlGetUserByIdRepository
 
     if (user) {
       const {
-        password,
         updated_at: updatedAt,
         created_at: createdAt,
         ...userData
