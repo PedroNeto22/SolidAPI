@@ -4,7 +4,7 @@ import { TaskData } from '../../../controllers/taskControllers/GetTasksByUserId/
 
 const prisma = new PrismaClient();
 
-export default class MysqlGetTasksByUserId
+export default class MysqlGetTasksByUserIdRepository
   implements IGetTaskByUserIdRepository
 {
   async findTasksByUserId(userId: string): Promise<TaskData[] | null> {
