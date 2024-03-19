@@ -14,6 +14,7 @@ class App {
   private routes() {
     this.app.use('/users', userRoutes);
     this.app.use('/tasks', taskRoutes);
+    this.app.use('/login', taskRoutes);
   }
 
   private middlewares() {
