@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
-type UserToken = {
+interface UserToken {
   id: string;
-};
+}
 
 export default function authLogin(
   req: Request,
@@ -27,4 +27,8 @@ export default function authLogin(
   }
 
   const { id } = jwt.verify(token, process.env.SECRETE as string) as UserToken;
+
+  req.userId = id;
+
+  return next();
 }
