@@ -3,6 +3,7 @@ export interface LoginParams {
   password: string;
 }
 
+export type Token = string;
 export interface ILoginUserUseCase {
-  execute(loginParams: LoginParams): Promise<void>;
+  execute(loginParams: LoginParams): Promise<Token | null>;
 }

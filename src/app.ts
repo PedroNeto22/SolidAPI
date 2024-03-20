@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import userRoutes from './app/routes/userRoutes';
 import taskRoutes from './app/routes/taskRoutes';
+import loginRoutes from './app/routes/loginRoutes';
 
 class App {
   public app: Application;
@@ -14,7 +15,7 @@ class App {
   private routes() {
     this.app.use('/users', userRoutes);
     this.app.use('/tasks', taskRoutes);
-    this.app.use('/login', taskRoutes);
+    this.app.use('/login', loginRoutes);
   }
 
   private middlewares() {

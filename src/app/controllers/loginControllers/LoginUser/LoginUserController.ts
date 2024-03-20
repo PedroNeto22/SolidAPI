@@ -14,8 +14,8 @@ export default class LoginUserController {
     }
 
     try {
-      await this.loginUserUseCase.execute({ email, password });
-      return res.status(202).json();
+      const token = await this.loginUserUseCase.execute({ email, password });
+      return res.status(202).json({ token });
     } catch (error) {
       const err = error as Error;
 
