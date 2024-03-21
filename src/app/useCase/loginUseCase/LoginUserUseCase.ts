@@ -32,7 +32,7 @@ export default class LoginUserUseCase implements ILoginUserUseCase {
 
     const secret = process.env.SECRETE as string;
 
-    const token = jwt.sign({ id: user.id }, secret);
+    const token = jwt.sign({ id: user.id }, secret, { expiresIn: '8d' });
     return token;
   }
 }

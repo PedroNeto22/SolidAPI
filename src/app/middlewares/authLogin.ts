@@ -18,13 +18,15 @@ export default function authLogin(
     });
   }
 
-  const token = authorization.split(' ')[1];
+  const authToken = authorization.split(' ');
 
-  if (!token) {
+  if (authToken[1] === 'undefined') {
     return res.status(401).json({
       message: 'login required',
     });
   }
+
+  const [, token] = authToken;
 
   const { id } = jwt.verify(token, process.env.SECRETE as string) as UserToken;
 
