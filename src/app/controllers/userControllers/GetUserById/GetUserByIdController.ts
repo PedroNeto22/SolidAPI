@@ -5,7 +5,7 @@ export default class GetUserByIdController {
   constructor(private readonly getUserByIdUseCase: IGetUserByIdUseCase) {}
 
   async handle(req: Request, res: Response) {
-    const { id } = req.params;
+    const { userId: id } = req;
     try {
       const userExists = await this.getUserByIdUseCase.execute(id);
 

@@ -7,7 +7,7 @@ export default class GetTasksByUserIdController {
   ) {}
 
   async handle(req: Request, res: Response) {
-    const { userId } = req.params;
+    const { userId } = req;
 
     try {
       const tasks = await this.getTaskByUserIdUseCase.execute(userId);
