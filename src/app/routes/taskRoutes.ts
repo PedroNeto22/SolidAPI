@@ -10,7 +10,7 @@ routes.post('/', (req, res) => {
   return createTaskController.handle(req, res);
 });
 
-routes.get('/:userId', (req, res) => {
+routes.get('/', (req, res) => {
   return getTasksByUserIdController.handle(req, res);
 });
 

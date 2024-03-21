@@ -8,7 +8,7 @@ routes.post('/', (req, res) => {
   return createUserController.handle(req, res);
 });
 
-routes.get('/:id', authLogin, (req, res) => {
+routes.get('/', authLogin, (req, res) => {
   return getUserByIdController.handle(req, res);
 });
 
