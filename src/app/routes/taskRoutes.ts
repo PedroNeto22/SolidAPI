@@ -1,5 +1,9 @@
 import { Router } from 'express';
-import { createTaskController, getTasksByUserIdController } from '../index';
+import {
+  createTaskController,
+  deleteTaskByTaskIdAndUserIdController,
+  getTasksByUserIdController,
+} from '../index';
 import authLogin from '../middlewares/authLogin';
 
 const routes = Router();
@@ -12,6 +16,10 @@ routes.post('/', (req, res) => {
 
 routes.get('/', (req, res) => {
   return getTasksByUserIdController.handle(req, res);
+});
+
+routes.delete('/:taskId', (req, res) => {
+  return deleteTaskByTaskIdAndUserIdController.handle(req, res);
 });
 
 export default routes;

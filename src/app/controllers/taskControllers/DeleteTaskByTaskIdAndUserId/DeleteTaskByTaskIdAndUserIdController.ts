@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { IDeleteTaskByUserIdUseCase } from './protocols';
+import { IDeleteTaskByTaskIdAndUserIdUseCase } from './protocols';
 
-export default class DeleteTaskByUserIdController {
+export default class DeleteTaskByTaskIdAndUserIdController {
   constructor(
-    private readonly deleteTaskByUserIdUseCase: IDeleteTaskByUserIdUseCase,
+    private readonly deleteTaskByTaskIdAndUserIdUseCase: IDeleteTaskByTaskIdAndUserIdUseCase,
   ) {}
 
   async handle(req: Request, res: Response) {
@@ -16,7 +16,7 @@ export default class DeleteTaskByUserIdController {
       });
     }
     try {
-      await this.deleteTaskByUserIdUseCase.execute({ userId, taskId });
+      await this.deleteTaskByTaskIdAndUserIdUseCase.execute({ userId, taskId });
       return res.status(200).json();
     } catch (error) {
       const err = error as Error;

@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { DeleteTaskParams } from '../../../controllers/taskControllers/DeleteTaskByUserId/protocols';
+import { DeleteTaskParams } from '../../../controllers/taskControllers/DeleteTaskByTaskIdAndUserId/protocols';
 import { IDeleteTaskByTaskIdAndUserIdRepository } from './IDeleteTaskByTaskIdAndUserIdRepository';
 
 const prisma = new PrismaClient();

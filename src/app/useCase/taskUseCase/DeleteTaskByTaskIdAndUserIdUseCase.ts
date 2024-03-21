@@ -1,12 +1,14 @@
 import {
   DeleteTaskParams,
-  IDeleteTaskByUserIdUseCase,
-} from '../../controllers/taskControllers/DeleteTaskByUserId/protocols';
+  IDeleteTaskByTaskIdAndUserIdUseCase,
+} from '../../controllers/taskControllers/DeleteTaskByTaskIdAndUserId/protocols';
 import { IDeleteTaskByTaskIdAndUserIdRepository } from '../../repositories/taskRepository/DeleteTaskByTaskIdAndUserId/IDeleteTaskByTaskIdAndUserIdRepository';
 import { IGetTaskByTaskIdAndUserIdRepository } from '../../repositories/taskRepository/GetTaskByTaskIdAndUserId/IGetTaskByTaskIdAndUserIdRepository';
 import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
 
-export class DeleteTaskByUserIdUseCase implements IDeleteTaskByUserIdUseCase {
+export default class DeleteTaskByTaskIdAndUserIdUseCase
+  implements IDeleteTaskByTaskIdAndUserIdUseCase
+{
   constructor(
     private readonly getUserByIdRepository: IGetUserByIdRepository,
     private readonly deleteTaskByTaskIdAndUserIdRepository: IDeleteTaskByTaskIdAndUserIdRepository,
@@ -32,6 +34,8 @@ export class DeleteTaskByUserIdUseCase implements IDeleteTaskByUserIdUseCase {
       throw new Error('Task does not exists');
     }
 
-    await this.deleteTaskByTaskIdAndUserIdRepository.deleteTask(deleteTaskParams)
+    await this.deleteTaskByTaskIdAndUserIdRepository.deleteTask(
+      deleteTaskParams,
+    );
   }
 }

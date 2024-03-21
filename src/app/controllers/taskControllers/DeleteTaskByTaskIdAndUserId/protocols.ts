@@ -3,6 +3,6 @@ export interface DeleteTaskParams {
   taskId: string;
 }
 
-export interface IDeleteTaskByUserIdUseCase {
+export interface IDeleteTaskByTaskIdAndUserIdUseCase {
   execute(deleteTaskParams: DeleteTaskParams): Promise<void>;
 }
