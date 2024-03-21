@@ -9,8 +9,6 @@ export default class GetTasksByUserIdController {
   async handle(req: Request, res: Response) {
     const { userId } = req.params;
 
-    console.log(userId);
-
     try {
       const tasks = await this.getTaskByUserIdUseCase.execute(userId);
       return res.status(200).json(tasks);
