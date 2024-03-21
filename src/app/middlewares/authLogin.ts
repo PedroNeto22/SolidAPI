@@ -20,17 +20,18 @@ export default function authLogin(
 
   const authToken = authorization.split(' ');
 
-  if (authToken[1] === 'undefined') {
-    return res.status(401).json({
-      message: 'login required',
-    });
-  }
-
   const [, token] = authToken;
 
-  const { id } = jwt.verify(token, process.env.SECRETE as string) as UserToken;
-
-  req.userId = id;
-
-  return next();
+  try {
+    const { id } = jwt.verify(
+      token,
+      process.env.SECRETE as string,
+    ) as UserToken;
+    req.userId = id;
+    return next();
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Internal server error',
+    });
+  }
 }

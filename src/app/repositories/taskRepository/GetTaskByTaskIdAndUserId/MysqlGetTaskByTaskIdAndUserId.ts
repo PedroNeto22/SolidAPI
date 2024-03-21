@@ -1,6 +1,8 @@
 import { PrismaClient } from '@prisma/client';
-import Task from '../../../entities/Task';
-import { IGetTaskByTaskIdAndUserIdRepository } from './IGetTaskByTaskIdAndUserIdRepository';
+import {
+  IGetTaskByTaskIdAndUserIdRepository,
+  TaskParams,
+} from './IGetTaskByTaskIdAndUserIdRepository';
 
 const prisma = new PrismaClient();
 
@@ -10,7 +12,7 @@ export default class MysqlGetTaskByTaskIdAndUserIdRepository
   async findTaskByTaskIdAndUserId(
     userId: string,
     taskId: string,
-  ): Promise<Partial<Task> | null> {
+  ): Promise<TaskParams | null> {
     const task = await prisma.tasks.findFirst({
       where: {
         userId,
@@ -21,5 +23,6 @@ export default class MysqlGetTaskByTaskIdAndUserIdRepository
     if (task) {
       return task;
     }
+    return null;
   }
 }
