@@ -4,7 +4,7 @@ import GetTasksByUserIdController from './controllers/taskControllers/GetTasksBy
 import CreateUserController from './controllers/userControllers/CreateUser/CreateUserController';
 import GetUserByIdController from './controllers/userControllers/GetUserById/GetUserByIdController';
 import MysqlCreateTaskRepository from './repositories/taskRepository/CreateTask/MysqlCreateTask';
-import MysqlGetTasksByUserId from './repositories/taskRepository/GetTaskByUserId/MysqlGetTasksByUserId';
+import MysqlGetTasksByUserId from './repositories/taskRepository/GetTasksByUserId/MysqlGetTasksByUserId';
 import MysqlCreateUserRepository from './repositories/userRepository/CreateUser/MysqlCreateUser';
 import MysqlGetUserByEmailRepository from './repositories/userRepository/GetUserByEmail/MysqlGetUserByEmail';
 import MysqlGetUserByIdRepository from './repositories/userRepository/GetUserById/MysqlGetUserById';
