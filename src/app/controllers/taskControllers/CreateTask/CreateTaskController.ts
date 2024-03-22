@@ -8,7 +8,7 @@ export default class CreateTaskController {
     const { title, body, status, priority } = req.body;
     const { userId } = req;
 
-    if (!title || !body || !status || !priority || !userId) {
+    if (!title || !body || !status || !priority) {
       return res.status(400).json({
         message: 'All fields required',
       });
