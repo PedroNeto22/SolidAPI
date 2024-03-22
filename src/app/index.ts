@@ -17,6 +17,9 @@ import GetTaskByUserIdUseCase from './useCase/taskUseCase/GetTasksByUserIdUseCas
 import CreateUserUseCase from './useCase/userUseCase/CreateUserUseCase';
 import GetUserByIdUseCase from './useCase/userUseCase/GetUserByIdUseCase';
 import MysqlGetTaskByTaskIdAndUserIdRepository from './repositories/taskRepository/GetTaskByTaskIdAndUserId/MysqlGetTaskByTaskIdAndUserId';
+import UpdateTaskController from './controllers/taskControllers/UpdateTask/UpdateTaskController';
+import UpdateTaskUseCase from './useCase/taskUseCase/UpdateTaskUseCase';
+import MysqlUpdateTask from './repositories/taskRepository/UpdateTask/MysqlUpdateTask';
 
 const mysqlCreateUserRepository = new MysqlCreateUserRepository();
 const createUserUseCase = new CreateUserUseCase(mysqlCreateUserRepository);
@@ -59,6 +62,13 @@ const deleteTaskByTaskIdAndUserIdUseCase =
 const deleteTaskByTaskIdAndUserIdController =
   new DeleteTaskByTaskIdAndUserIdController(deleteTaskByTaskIdAndUserIdUseCase);
 
+const mysqlUpdateTaskRepository = new MysqlUpdateTask();
+const updateTaskUseCase = new UpdateTaskUseCase(
+  mysqlGetUserByIdRepository,
+  mysqlGetTaskByTaskIdAndUserIdRepository,
+  mysqlUpdateTaskRepository,
+);
+const updateTaskController = new UpdateTaskController(updateTaskUseCase);
 export {
   createUserController,
   getUserByIdController,
@@ -66,4 +76,5 @@ export {
   getTasksByUserIdController,
   loginUserController,
   deleteTaskByTaskIdAndUserIdController,
+  updateTaskController,
 };

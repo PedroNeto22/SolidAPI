@@ -4,13 +4,19 @@ import { IUpdateTaskUseCase } from './protocols';
 export default class UpdateTaskController {
   constructor(private readonly updateTaskUseCase: IUpdateTaskUseCase) {}
 
-  handle(req: Request, res: Response) {
-    const { title, body, status, priority } = req.body;
+  async handle(req: Request, res: Response) {
     const { userId } = req;
+    const { taskId } = req.params;
 
+    try {
+      await this.updateTaskUseCase.execute({ ...req.body, userId, taskId });
+      return res.status(200).json();
+    } catch (error) {
+      const err = error as Error;
 
-    try{
-      await this.updateTaskUseCase.execute()
+      return res.status(400).json({
+        message: err.message || 'Unexpected error.',
+      });
     }
   }
 }

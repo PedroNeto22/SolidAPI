@@ -4,6 +4,7 @@ export interface UpdateTaskParams {
   status: string;
   priority: string;
   userId: string;
+  taskId: string;
 }
 
 export interface IUpdateTaskUseCase {

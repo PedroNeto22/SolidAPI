@@ -3,6 +3,7 @@ import {
   createTaskController,
   deleteTaskByTaskIdAndUserIdController,
   getTasksByUserIdController,
+  updateTaskController,
 } from '../index';
 import authLogin from '../middlewares/authLogin';
 
@@ -16,6 +17,10 @@ routes.post('/', (req, res) => {
 
 routes.get('/', (req, res) => {
   return getTasksByUserIdController.handle(req, res);
+});
+
+routes.put('/:taskId', (req, res) => {
+  return updateTaskController.handle(req, res);
 });
 
 routes.delete('/:taskId', (req, res) => {
