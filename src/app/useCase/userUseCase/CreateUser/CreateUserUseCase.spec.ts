@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { createUserRepositoryMock } from '../../../../test/utils/CreateUserRepositoryMock';
 import CreateUserUseCase from './CreateUserUseCase';
+import User from '../../../entities/User';
 
-const mockRepository = createUserRepositoryMock();
+const arr: User[] = [];
+const mockRepository = createUserRepositoryMock(arr);
 const sut = new CreateUserUseCase(mockRepository);
 
 describe('Create an user', () => {
