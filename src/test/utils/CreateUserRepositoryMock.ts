@@ -2,12 +2,12 @@ import { CreateUserParams } from '../../app/controllers/userControllers/CreateUs
 import User from '../../app/entities/User';
 import { ICreateUserRepository } from '../../app/repositories/userRepository/CreateUser/ICreateUserRepository';
 
-export function createUserRepositoryMock() {
+export function createUserRepositoryMock(userArray: User[]) {
   class CreateUserRepositoryMock implements ICreateUserRepository {
-    public readonly inMemoryDataBase: User[] = [];
+    constructor(public readonly inMemoryDataBase: User[]) {}
 
     async save(params: CreateUserParams): Promise<void> {
-      await this.inMemoryDataBase.push(params);
+      await this.inMemoryDataBase.push({ ...params, id: crypto.randomUUID() });
     }
 
     async findByEmail(email: string): Promise<User | null> {
@@ -23,5 +23,5 @@ export function createUserRepositoryMock() {
     }
   }
 
-  return new CreateUserRepositoryMock();
+  return new CreateUserRepositoryMock(userArray);
 }
