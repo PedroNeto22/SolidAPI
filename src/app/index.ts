@@ -11,14 +11,14 @@ import MysqlGetUserByEmailRepository from './repositories/userRepository/GetUser
 import MysqlDeleteTaskByTaskIdAndUserIdRepository from './repositories/taskRepository/DeleteTaskByTaskIdAndUserId/MysqlDeleteTaskByTaskIdAndUserId';
 import MysqlGetUserByIdRepository from './repositories/userRepository/GetUserById/MysqlGetUserById';
 import LoginUserUseCase from './useCase/loginUseCase/LoginUserUseCase';
-import CreateTaskUseCase from './useCase/taskUseCase/CreateTaskUseCase';
-import DeleteTaskByTaskIdAndUserIdUseCase from './useCase/taskUseCase/DeleteTaskByTaskIdAndUserIdUseCase';
-import GetTaskByUserIdUseCase from './useCase/taskUseCase/GetTasksByUserIdUseCase';
-import CreateUserUseCase from './useCase/userUseCase/CreateUserUseCase';
-import GetUserByIdUseCase from './useCase/userUseCase/GetUserByIdUseCase';
+import CreateTaskUseCase from './useCase/taskUseCase/CreateTask/CreateTaskUseCase';
+import DeleteTaskByTaskIdAndUserIdUseCase from './useCase/taskUseCase/DeleteTask/DeleteTaskByTaskIdAndUserIdUseCase';
+import GetTaskByUserIdUseCase from './useCase/taskUseCase/GetTaskByUserId/GetTasksByUserIdUseCase';
+import CreateUserUseCase from './useCase/userUseCase/CreateUser/CreateUserUseCase';
+import GetUserByIdUseCase from './useCase/userUseCase/GetUserById/GetUserByIdUseCase';
 import MysqlGetTaskByTaskIdAndUserIdRepository from './repositories/taskRepository/GetTaskByTaskIdAndUserId/MysqlGetTaskByTaskIdAndUserId';
 import UpdateTaskController from './controllers/taskControllers/UpdateTask/UpdateTaskController';
-import UpdateTaskUseCase from './useCase/taskUseCase/UpdateTaskUseCase';
+import UpdateTaskUseCase from './useCase/taskUseCase/UpdateTask/UpdateTaskUseCase';
 import MysqlUpdateTask from './repositories/taskRepository/UpdateTask/MysqlUpdateTask';
 
 const mysqlCreateUserRepository = new MysqlCreateUserRepository();

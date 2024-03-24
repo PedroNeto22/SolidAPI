@@ -1,9 +1,9 @@
 import {
   IGetTasksByUserIdUseCase,
   TaskData,
-} from '../../controllers/taskControllers/GetTasksByUserId/protocols';
-import { IGetTaskByUserIdRepository } from '../../repositories/taskRepository/GetTasksByUserId/IGetTasksByUserIdRepository';
-import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
+} from '../../../controllers/taskControllers/GetTasksByUserId/protocols';
+import { IGetTaskByUserIdRepository } from '../../../repositories/taskRepository/GetTasksByUserId/IGetTasksByUserIdRepository';
+import { IGetUserByIdRepository } from '../../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
 
 export default class GetTaskByUserIdUseCase
   implements IGetTasksByUserIdUseCase

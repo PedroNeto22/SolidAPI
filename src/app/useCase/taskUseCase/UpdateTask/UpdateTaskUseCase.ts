@@ -1,10 +1,10 @@
 import {
   IUpdateTaskUseCase,
   UpdateTaskParams,
-} from '../../controllers/taskControllers/UpdateTask/protocols';
-import { IGetTaskByTaskIdAndUserIdRepository } from '../../repositories/taskRepository/GetTaskByTaskIdAndUserId/IGetTaskByTaskIdAndUserIdRepository';
-import { IUpdateTaskRepository } from '../../repositories/taskRepository/UpdateTask/IUpdateTaskRepository';
-import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
+} from '../../../controllers/taskControllers/UpdateTask/protocols';
+import { IGetTaskByTaskIdAndUserIdRepository } from '../../../repositories/taskRepository/GetTaskByTaskIdAndUserId/IGetTaskByTaskIdAndUserIdRepository';
+import { IUpdateTaskRepository } from '../../../repositories/taskRepository/UpdateTask/IUpdateTaskRepository';
+import { IGetUserByIdRepository } from '../../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
 
 export default class UpdateTaskUseCase implements IUpdateTaskUseCase {
   constructor(

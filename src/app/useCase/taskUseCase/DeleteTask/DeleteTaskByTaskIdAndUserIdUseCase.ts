@@ -1,10 +1,10 @@
 import {
   DeleteTaskParams,
   IDeleteTaskByTaskIdAndUserIdUseCase,
-} from '../../controllers/taskControllers/DeleteTaskByTaskIdAndUserId/protocols';
-import { IDeleteTaskByTaskIdAndUserIdRepository } from '../../repositories/taskRepository/DeleteTaskByTaskIdAndUserId/IDeleteTaskByTaskIdAndUserIdRepository';
-import { IGetTaskByTaskIdAndUserIdRepository } from '../../repositories/taskRepository/GetTaskByTaskIdAndUserId/IGetTaskByTaskIdAndUserIdRepository';
-import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
+} from '../../../controllers/taskControllers/DeleteTaskByTaskIdAndUserId/protocols';
+import { IDeleteTaskByTaskIdAndUserIdRepository } from '../../../repositories/taskRepository/DeleteTaskByTaskIdAndUserId/IDeleteTaskByTaskIdAndUserIdRepository';
+import { IGetTaskByTaskIdAndUserIdRepository } from '../../../repositories/taskRepository/GetTaskByTaskIdAndUserId/IGetTaskByTaskIdAndUserIdRepository';
+import { IGetUserByIdRepository } from '../../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
 
 export default class DeleteTaskByTaskIdAndUserIdUseCase
   implements IDeleteTaskByTaskIdAndUserIdUseCase

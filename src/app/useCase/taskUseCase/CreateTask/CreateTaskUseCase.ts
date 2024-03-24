@@ -1,10 +1,10 @@
 import {
   CreateTaskParams,
   ICreateTaskUseCase,
-} from '../../controllers/taskControllers/CreateTask/protocols';
-import Task from '../../entities/Task';
-import { ICreateTaskRepository } from '../../repositories/taskRepository/CreateTask/ICreateTaskRepository';
-import { IGetUserByIdRepository } from '../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
+} from '../../../controllers/taskControllers/CreateTask/protocols';
+import Task from '../../../entities/Task';
+import { ICreateTaskRepository } from '../../../repositories/taskRepository/CreateTask/ICreateTaskRepository';
+import { IGetUserByIdRepository } from '../../../repositories/userRepository/GetUserById/IGetUserByIdRepository';
 
 export default class CreateTaskUseCase implements ICreateTaskUseCase {
   constructor(
